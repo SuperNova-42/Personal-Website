@@ -5,10 +5,106 @@ Resume | Flask Navigation
 {% endblock %}
 
 {% block content %}
-<h1>Resume</h1>
+<div class="resume">
+    <div class="resume-heading">
+    <h1>Alexander Dacunha</h1>
+    <h3>Orlando, FL</h3>
+    </div>
 
-<p>
-    Resume
-</p>
+    <div class="resume-content">
+        <section class="resume-section">
+            <h2>Education</h2>
+            <hr>
+            <div class="resume-item">
+                <h3>University of Central Florida</h3>
+                <span><strong>May 2029</strong></span>
+            </div>
+            <div class="resume-item">
+                <p class="italic">Bachelor of Science in Computer Science</p>
+                <span class="italic">Orlando, FL</span>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Relevant Coursework</h2>
+            <hr>
+            <div class="resume-item">
+                <p>Object-Oriented Programming, Security in Computing, Computer Science I (Data Structures &amp; Algorithms)</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Skills</h2>
+            <hr>
+            <div class="resume-skills">
+                <p><strong>Programming:</strong> Python, Java, C, SQL, JavaScript</p>
+                <p><strong>Web &amp; Frameworks:</strong> Flask, Jinja2, HTML/CSS</p>
+                <p><strong>Tools &amp; Systems:</strong> GitHub</p>
+                <p><strong>Languages:</strong> English (Native), Spanish (Professional)</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Projects</h2>
+            <hr>
+            <div class="resume-entry">
+                <div class="resume-item">
+                    <h3>KettleFlip <span>| Python, Requests, REST API</span></h3>
+                    <span><strong>2026</strong></span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Built a Python application that communicates with Hypixel's REST API to retrieve and analyze SkyBlock item market data.</li>
+                    <li>Implemented logic to identify potentially profitable item flips by comparing current market prices against expected values.</li>
+                    <li>Parsed JSON API responses and calculated potential profit to present market opportunities to users.</li>
+                </ul>
+            </div>
+
+            <div class="resume-entry">
+                <div class="resume-item">
+                    <h3>Full-Stack Learning Platform with Code Judge <span>| Python, Flask, SQL</span></h3>
+                    <span><strong>2025</strong></span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Built a full-stack learning platform for classroom programming practice with automated code evaluation and structured feedback.</li>
+                    <li>Implemented a backend evaluation process to execute user submissions against predefined test cases and return structured results.</li>
+                    <li>Designed a relational database using SQLAlchemy to manage users, classrooms, coding problems, and submissions.</li>
+                    <li>Implemented role-based access control and secure session-based authentication using password hashing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Competitions &amp; Activities</h2>
+            <hr>
+            <div class="resume-entry">
+                <div class="resume-item">
+                    <h3>Lockheed Martin CyberQuest</h3>
+                    <span><strong>Feb. 2025</strong></span>
+                </div>
+                <div class="resume-item">
+                    <p class="italic">Online Participant</p>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Completed multi-stage cybersecurity challenges involving network forensics, system analysis, and vulnerability identification as part of a 4-person team.</li>
+                </ul>
+            </div>
+
+            <div class="resume-entry">
+                <div class="resume-item">
+                    <h3>UCF High School Programming Tournament</h3>
+                    <span><strong>May 2024</strong></span>
+                </div>
+                <div class="resume-item">
+                    <p class="italic">Competitor</p>
+                    <span class="italic">Orlando, FL</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Solved algorithmic programming problems under time constraints, applying data structures, algorithms, and time-complexity analysis.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+
 
 {% endblock %}
