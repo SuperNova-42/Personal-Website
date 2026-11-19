@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ project.name }} | Alexander Dacunha
+{% endblock %}
+
+{% block content %}
+<div class="project-page">
+    <h1>{{ project.name }}</h1>
+
+    {% if project.category == "Coding" and project.tech %}
+        <p class="tech-stack"><strong>Tech Stack:</strong> {{ project.tech }}</p>
+    {% endif %}
+
+    <section class="reflection-block">
+        <h2>Overview</h2>
+        <p>{{ project.summary }}</p>
+    </section>
+
+    {% if project.category == "Coding" %}
+        {% if project.details %}
+            <section class="reflection-block">
+                <h2>Key Highlights</h2>
+                <ul class="resume-bullets">
+                    {% for point in project.details %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+
+        {% if project.link %}
+            <p>
+                <a href="{{ project.link }}" target="_blank">View on GitHub &rarr;</a>
+            </p>
+        {% endif %}
+    {% endif %}
+
+    {% if project.category == "Technical Writing" and project.embed_pdf %}
+        <section class="project-embed">
+            <h2>Document</h2>
+            <iframe
+                src="{{ url_for('static', filename=project.embed_pdf) }}"
+                class="pdf-viewer"
+                title="{{ project.name }} PDF">
+            </iframe>
+            <p class="embed-fallback">
+                Having trouble viewing the document?
+                <a href="{{ url_for('static', filename=project.embed_pdf) }}" target="_blank">Open PDF in a new tab</a>.
+            </p>
+        </section>
+    {% endif %}
+
+    <p class="back-link">
+        <a href="{{ url_for('projects') }}">&larr; Back to Projects</a>
+    </p>
+</div>
+{% endblock %}

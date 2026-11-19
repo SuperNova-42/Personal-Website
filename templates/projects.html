@@ -7,15 +7,19 @@ Projects | Flask Navigation
 {% block content %}
 <h1>Projects</h1>
 
-<p>
-    <div class="link-grid">
-        <a class="link-container">Project 1</a>
-        <a class="link-container">Project 2</a>
-        <a class="link-container">Project 3</a>
-        <a class="link-container">Project 4</a>
+<div class="link-grid">
+    <div class="project-list-header">
+        <span>Name</span>
+        <span>Category</span>
     </div>
+    {% for key, project in projects.items() %}
+        <a href="{{ url_for('project_details', project=key) }}" class="link-container">
+            <span class="project-title">{{ project.name }} </span>
+            <span class="project-title">{{project.category}} </span>
+        </a>
+    {% endfor %}
+</div>
 
-</p>
 
 {% endblock %}
 
