@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}
-Cover-Letter | Flask Navigation
+Cover-Letter | Alexander Dacunha
 {% endblock %}
 
 {% block content %}
-
 <h1 style="margin-bottom: 0px;">Cover Letter</h1>
+<div class="project-page">
+    <section class="reflection-block">
+        <h2>Overview</h2>
+        <p>{{ summary_html | safe }}</p>
+    </section>
+
+    <section class="project-embed">
+        <h2>Document</h2>
+    </section>
+</div>
+
+<h1 style="margin-bottom: 0px; margin-top: 0px;">Cover Letter</h1>
 
 <div class="cover-letter">
     <p>
@@ -23,7 +34,7 @@ Cover-Letter | Flask Navigation
         Boise, ID 83704
         <br>
         <br>
-        To Whom it May Concern:
+        To Whom It May Concern:
         <br>
         <span class="tab"></span>I am writing to apply for the Software Developer Intern role at IDX Exchange. With hands-on experience
         building full-stack web applications utilizing Python, Flask, and SQLAlchemy, I am prepared to contribute to your software engineering
@@ -44,7 +55,7 @@ Cover-Letter | Flask Navigation
         opportunity for the student to complete the examples and receive automated feedback. I built the
         project in my IB Computer Science class for a project that required me to code a solution for a
         client. My client was my teacher, and he wanted a website to help students in IB Computer
-        Science learn and understand some of the higher level data structures found in the program. It is
+        Science learn and understand some of the higher-level data structures found in the program. It is
         featured on my GitHub (SuperNova-42) and it gave me experience designing and connecting
         multiple parts of a web application together to build a complete product.
 

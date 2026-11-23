@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import markdown
 
 app = Flask(__name__, template_folder='templates')
 
@@ -7,7 +8,7 @@ PROJECTS = {
         "name": "KettleFlip",
         "category": "Coding",
         "tech": "Python, Requests, REST API",
-        "summary": "A Python application that communicates with Hypixel's REST API to retrieve and analyze SkyBlock item market data.",
+        "summary_file": "static/content/kettleflip.md",
         "details": [
             "Implemented logic to identify potentially profitable item flips by comparing current market prices against expected values.",
             "Parsed JSON API responses and calculated potential profit to present market opportunities to users."
@@ -18,7 +19,7 @@ PROJECTS = {
         "name": "Full-Stack Learning Platform with Code Judge",
         "category": "Coding",
         "tech": "Python, Flask, SQLAlchemy, HTML/CSS",
-        "summary": "A full-stack learning platform for classroom programming practice with automated code evaluation and structured feedback.",
+        "summary_file": "static/content/code-judge.md",
         "details": [
             "Implemented a backend evaluation process to execute user submissions against predefined test cases.",
             "Designed a relational database using SQLAlchemy to manage users, classrooms, coding problems, and submissions.",
@@ -29,13 +30,13 @@ PROJECTS = {
     "Proposal": {
         "name": "Proposal",
         "category": "Technical Writing",
-        "summary": "Here goes the summary",
-        "embed_pdf": "docs/Proposal.pdf"
+        "summary_file": "static/content/proposal.md",
+        "embed_pdf": "docs/Proposal_Revision.pdf"
     },
     "Instructions" : {
         "name": "Instructions",
         "category": "Technical Writing",
-        "summary": "Here goes the summary",
+        "summary_file": "static/content/instructions.md",
         "embed_pdf": "docs/GitHub_Instructions.pdf"
     }
 }
@@ -55,15 +56,23 @@ def projects():
 @app.route('/projects/<project>')
 def project_details(project):
     project = PROJECTS.get(project)
-    return render_template("project_details.html", project = project)
+    summary_html = None
+    if "summary_file" in project:
+        with open(project["summary_file"], "r", encoding="utf-8") as f:
+            summary_html = markdown.markdown(f.read())
+    return render_template("project_details.html", project = project, summary_html = summary_html)
 
 @app.route('/resume')
 def resume():
-    return render_template("resume.html")
+    with open("static/content/resume.md", "r", encoding="utf-8") as f:
+        summary_html = markdown.markdown(f.read())
+    return render_template("resume.html", summary_html = summary_html)
 
 @app.route('/cover-letter')
 def cover_letter():
-    return render_template("cover-letter.html")
+    with open("static/content/cover-letter.md", "r", encoding="utf-8") as f:
+        summary_html = markdown.markdown(f.read())
+    return render_template("cover-letter.html", summary_html = summary_html)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

@@ -1,0 +1,1 @@
+A full-stack learning platform for classroom programming practice with automated code evaluation and structured feedback.

@@ -1,0 +1,1 @@
+A Python application that communicates with Hypixel's REST API to retrieve and analyze SkyBlock item market data.

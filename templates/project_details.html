@@ -14,7 +14,7 @@
 
     <section class="reflection-block">
         <h2>Overview</h2>
-        <p>{{ project.summary }}</p>
+        <p>{{ summary_html | safe }}</p>
     </section>
 
     {% if project.category == "Coding" %}

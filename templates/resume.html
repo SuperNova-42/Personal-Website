@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 
 {% block title %}
-Resume | Flask Navigation
+Resume | Alexander Dacunha
 {% endblock %}
 
 {% block content %}
+<h1 style="margin-bottom: 0px;">Resume</h1>
+<div class="project-page">
+    <section class="reflection-block">
+        <h2>Overview</h2>
+        <p>{{ summary_html | safe }}</p>
+    </section>
+
+    <section class="project-embed">
+        <h2>Document</h2>
+    </section>
+</div>
+
 <div class="resume">
     <div class="resume-heading">
     <h1>Alexander Dacunha</h1>
